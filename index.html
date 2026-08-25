@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chess Widget</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html, body {
+      background-color: #191919 !important;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  .container {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+
+  .card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e2e8f0;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+  .chesscom {
+    background-color: #312E2B !important; 
+    color: white;
+    border: none;
+  }
+  .lichess {
+    background-color: hsl(37, 10%, 92%) !important; 
+    font-family: "Noto Sans", sans-serif;
+    font-size: 30px;
+    border: none;
+    text-shadow: 0 1px 0 white;
+  }
+  .lichess-text {
+    color: #4D4D4D;
+    margin-left: 7px; 
+  }
+  .org-text {
+    color: #787878;
+  }
+  .logo {
+    height: 43px;
+  }
+
+  @media (max-width: 480px) {
+    .lichess {
+      font-size: 18px;
+    }
+    .lichess-text {
+      margin-left: 4.2px;
+    }
+    .logo {
+      height: 25.8px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <a href="https://www.chess.com" target="_blank" class="card chesscom">
+      <img src="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/PedroPinhata/phpwlfNic.png" alt="Chess.com" class="logo">
+    </a>
+    <a href="https://lichess.org" target="_blank" class="card lichess">
+      <img src="https://raw.githubusercontent.com/lichess-org/files/refs/heads/lichess/Press%20Kit/lichesslogo.png" alt="Lichess" class="logo">
+      <span class="lichess-text">lichess</span><span class="org-text">.org</span>
+    </a>
+  </div>
+</body>
+</html>
