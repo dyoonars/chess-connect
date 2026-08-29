@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chess Connect</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
   html, body {
     margin: 0;
@@ -52,6 +52,19 @@
     background-color: #eaeef3 !important;
     border: none;
   }
+  
+  .fide-text {
+    color: #24305E;
+    font-family: "Roboto", sans-serif;
+    font-size: 9.3px;
+    line-height: 10.9px;
+    padding-left: 7.8px;
+    text-align: left;
+  }
+  .fide-text strong {
+    font-weight: 700;
+  }
+
   .kcf {
     background-color: #ffffff;
   }
@@ -61,6 +74,7 @@
     color: white;
     border: none;
   }
+  
   .lichess {
     background-color: hsl(37, 10%, 92%) !important;
     font-family: "Noto Sans", sans-serif;
@@ -82,21 +96,11 @@
     object-fit: contain;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .fide, .kcf {
-      background-color: #2a2a2a !important; 
-      border-color: #404040;
-    }
-  }
-
   @media (max-width: 480px) {
     .container {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
     }
-  }
-
-  @media (max-width: 480px) {
     .lichess {
       font-size: 18px;
     }
@@ -113,6 +117,10 @@
   <div class="container">
     <a href="https://www.fide.com/" target="_blank" class="card fide">
       <img src="images/fidelogo.png" alt="FIDE" class="logo">
+      <div class="fide-text">
+        International<br>
+        <strong>Chess Federation</strong>
+      </div>
     </a>
     <a href="http://www.kchess.or.kr/" target="_blank" class="card kcf">
       <img src="images/kcflogo.png" alt="대한체스연맹" class="logo">
