@@ -6,13 +6,23 @@
 <title>Chess Connect</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
 <style>
+  @font-face {
+    font-family: 'lichess';
+    font-display: block;
+    src: url(https://lichess1.org/assets/hashed/lichess.0261ffe4.woff2) format('woff2');
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
   :root {
     --scale: calc(100vw / 1200);
   }
 
   html, body {
-    margin: 0;
-    padding: 0;
     background-color: #ffffff;
   }
 
@@ -32,7 +42,6 @@
     gap: calc(16 * var(--scale));
     width: 100%;
     height: 100vh;
-    box-sizing: border-box;
     padding: calc(8 * var(--scale));
   }
 
@@ -86,14 +95,29 @@
     border: none;
     text-shadow: 0 calc(1 * var(--scale)) 0 white;
   }
+  
   .lichess-text {
     color: #4D4D4D;
-    padding-left: calc(10.5 * var(--scale)); 
   }
+  
   .org-text {
     color: #787878;
   }
   
+  [data-icon]::before {
+    font-family: 'lichess';
+    content: attr(data-icon);
+    font-size: 1.2em;
+    vertical-align: middle;
+    color: #4D4D4D;
+    padding-right: calc(10.5 * var(--scale));
+    opacity: .9;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none;
+    speak: none;
+  }
+
   .logo {
     height: calc(43 * var(--scale));
     max-width: 90%;
@@ -127,7 +151,7 @@
       <img src="images/chesscomlogo.png" alt="Chess.com" class="logo">
     </a>
     <a href="https://lichess.org" target="_blank" class="card lichess">
-      <img src="images/lichesslogo.png" alt="Lichess" class="logo">
+      <span class="site-icon" data-icon=""></span>
       <span class="lichess-text">lichess</span><span class="org-text">.org</span>
     </a>
   </div>
